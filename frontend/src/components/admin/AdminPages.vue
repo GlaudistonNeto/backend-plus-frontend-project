@@ -1,7 +1,7 @@
 <template>
     <div class="admin-pages">
         <PageTitle icon="fa fa-cogs" main="System Administration"
-            sub="Registers & Co" />
+            sub="Registration & Co." />
         <div class="admin-pages-tabs">
             <b-card no-body>
                 <b-tabs card>
@@ -21,10 +21,10 @@
 </template>
 
 <script>
-import PageTitle from '../template/PageTitle';
-import ArticleAdmin from './ArticleAdmin';
-import CategoryAdmin from './CategoryAdmin';
-import UserAdmin from './UserAdmin';
+import PageTitle from '../template/PageTitle'
+import ArticleAdmin from './ArticleAdmin'
+import CategoryAdmin from './CategoryAdmin'
+import UserAdmin from './UserAdmin'
 
 export default {
     name: 'AdminPages',

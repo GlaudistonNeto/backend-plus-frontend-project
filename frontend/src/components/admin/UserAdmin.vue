@@ -8,7 +8,7 @@
                         <b-form-input id="user-name" type="text"
                             v-model="user.name" required
                             :readonly="mode === 'remove'"
-                            placeholder="Enter the user name..." />
+                            placeholder="Enter the User Name..." />
                     </b-form-group>
                 </b-col>
                 <b-col md="6" sm="12">
@@ -16,7 +16,7 @@
                         <b-form-input id="user-email" type="text"
                             v-model="user.email" required
                             :readonly="mode === 'remove'"
-                            placeholder="Enter User Email..." />
+                            placeholder="Enter the User Email..." />
                     </b-form-group>
                 </b-col>
             </b-row>
@@ -37,17 +37,17 @@
                         label-for="user-confirm-password">
                         <b-form-input id="user-confirm-password" type="password"
                             v-model="user.confirmPassword" required
-                            placeholder="Confirm User Password..." />
+                            placeholder="Confirm the User Password..." />
                     </b-form-group>
                 </b-col>
             </b-row>
             <b-row>
                 <b-col xs="12">
                     <b-button variant="success" v-if="mode === 'save'"
-                        @click="save">Salvar</b-button>
+                        @click="save">Salve</b-button>
                     <b-button variant="danger" v-if="mode === 'remove'"
-                        @click="remove">Excluir</b-button>
-                    <b-button class="ml-2" @click="reset">Cancelar</b-button>
+                        @click="remove">Remove</b-button>
+                    <b-button class="ml-2" @click="reset">Cancel</b-button>
                 </b-col>
             </b-row>
         </b-form>
@@ -77,12 +77,12 @@ export default {
             user: {},
             users: [],
             fields: [
-                { key: 'id', label: 'Code', sortable: true },
-                { key: 'name', label: 'Name', sortable: true },
-                { key: 'email', label: 'Email', sortable: true },
-                { key: 'admin', label: 'Administrator', sortable: true,
-                    formatter: value => value ? 'Yes' : 'No' },
-                { key: 'actions', label: 'Actions' }
+                { key: 'id', label: 'Código', sortable: true },
+                { key: 'name', label: 'Nome', sortable: true },
+                { key: 'email', label: 'E-mail', sortable: true },
+                { key: 'admin', label: 'Administrador', sortable: true,
+                    formatter: value => value ? 'Sim' : 'Não' },
+                { key: 'actions', label: 'Ações' }
             ]
         }
     },

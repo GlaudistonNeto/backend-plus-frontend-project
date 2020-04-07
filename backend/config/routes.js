@@ -1,4 +1,4 @@
-const admin = require('./admin');
+const admin = require('./admin')
 
 module.exports = app => {
     app.post('/signup', app.api.user.save)
@@ -12,20 +12,20 @@ module.exports = app => {
 
     app.route('/users/:id')
         .all(app.config.passport.authenticate())
-        .get(admin(app.api.user.getById))
         .put(admin(app.api.user.save))
+        .get(admin(app.api.user.getById))
         .delete(admin(app.api.user.remove))
-
 
     app.route('/categories')
         .all(app.config.passport.authenticate())
-        .get(app.api.category.get)
+        .get(admin(app.api.category.get))
         .post(admin(app.api.category.save))
 
+    // Cuidado com ordem! Tem que vir antes de /categories/:id
     app.route('/categories/tree')
         .all(app.config.passport.authenticate())
-        .get(admin(app.api.category.getTree))
-    
+        .get(app.api.category.getTree)
+
     app.route('/categories/:id')
         .all(app.config.passport.authenticate())
         .get(app.api.category.getById)

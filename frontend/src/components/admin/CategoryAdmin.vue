@@ -8,7 +8,7 @@
                     :readonly="mode === 'remove'"
                     placeholder="Enter the Category Name..." />
             </b-form-group>
-            <b-form-group label="Parent Category:" label-for="category-parentId">
+            <b-form-group label="Categoria Pai:" label-for="category-parentId">
                 <b-form-select v-if="mode === 'save'"
                     id="category-parentId"
                     :options="categories" v-model="category.parentId" />
@@ -18,10 +18,10 @@
                     readonly />
             </b-form-group>
             <b-button variant="success" v-if="mode === 'save'"
-                @click="save">Salvar</b-button>
+                @click="save">Save</b-button>
             <b-button variant="danger" v-if="mode === 'remove'"
-                @click="remove">Excluir</b-button>
-            <b-button class="ml-2" @click="reset">Cancelar</b-button>
+                @click="remove">Remove</b-button>
+            <b-button class="ml-2" @click="reset">Cancel</b-button>
         </b-form>
         <hr>
         <b-table hover striped :items="categories" :fields="fields">
@@ -49,10 +49,10 @@ export default {
             category: {},
             categories: [],
             fields: [
-                { key: 'id', label: 'Code', sortable: true },
-                { key: 'name', label: 'Name', sortable: true },
-                { key: 'path', label: 'Path', sortable: true },
-                { key: 'actions', label: 'Actions' }
+                { key: 'id', label: 'Código', sortable: true },
+                { key: 'name', label: 'Nome', sortable: true },
+                { key: 'path', label: 'Caminho', sortable: true },
+                { key: 'actions', label: 'Ações' }
             ]
         }
     },
