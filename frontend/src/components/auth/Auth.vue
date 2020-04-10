@@ -1,7 +1,7 @@
 <template>
     <div class="auth-content">
         <div class="auth-modal">
-            <img src="@/assets/logo.jpg" width="200" alt="Logo" />
+            <img src="@/assets/logo.png" width="200" alt="Logo" />
             <hr>
             <div class="auth-title">{{ showSignup ? 'Register' : 'Login' }}</div>
 
@@ -15,7 +15,7 @@
             <button v-else @click="signin">Enter</button>
 
             <a href @click.prevent="showSignup = !showSignup">
-                <span v-if="showSignup">Already registered? Login Access!</span>
+                <span v-if="showSignup">Already registered? Access Login!</span>
                 <span v-else>Don't have a registration? Register here!</span>
             </a>
         </div>

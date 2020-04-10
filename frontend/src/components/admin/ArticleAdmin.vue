@@ -8,7 +8,7 @@
                     :readonly="mode === 'remove'"
                     placeholder="Enter the Article Name..." />
             </b-form-group>
-            <b-form-group label="Descrição" label-for="article-description">
+            <b-form-group label="Description" label-for="article-description">
                 <b-form-input id="article-description" type="text"
                     v-model="article.description" required
                     :readonly="mode === 'remove'"
@@ -22,17 +22,17 @@
                     placeholder="Enter the Image URL..." />
             </b-form-group>
             <b-form-group v-if="mode === 'save'" 
-                label="Categoria:" label-for="article-categoryId">
+                label="Category:" label-for="article-categoryId">
                 <b-form-select id="article-categoryId"
                     :options="categories" v-model="article.categoryId" />
             </b-form-group>
             <b-form-group v-if="mode === 'save'" 
-                label="Autor:" label-for="article-userId">
+                label="Author:" label-for="article-userId">
                 <b-form-select id="article-userId"
                     :options="users" v-model="article.userId" />
             </b-form-group>
             <b-form-group v-if="mode === 'save'"
-                label="Conteúdo" label-for="article-content">
+                label="Content" label-for="article-content">
                 <VueEditor v-model="article.content"
                     placeholder="Enter Article Content..." />
             </b-form-group>
@@ -76,10 +76,10 @@ export default {
             limit: 0,
             count: 0,
             fields: [
-                { key: 'id', label: 'Código', sortable: true },
-                { key: 'name', label: 'Nome', sortable: true },
-                { key: 'description', label: 'Descrição', sortable: true },
-                { key: 'actions', label: 'Ações' }
+                { key: 'id', label: 'Code', sortable: true },
+                { key: 'name', label: 'Name', sortable: true },
+                { key: 'description', label: 'Description', sortable: true },
+                { key: 'actions', label: 'Actions' }
             ]
         }
     },

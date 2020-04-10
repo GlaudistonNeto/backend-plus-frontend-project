@@ -49,10 +49,10 @@ export default {
             category: {},
             categories: [],
             fields: [
-                { key: 'id', label: 'Código', sortable: true },
-                { key: 'name', label: 'Nome', sortable: true },
-                { key: 'path', label: 'Caminho', sortable: true },
-                { key: 'actions', label: 'Ações' }
+                { key: 'id', label: 'Code', sortable: true },
+                { key: 'name', label: 'Name', sortable: true },
+                { key: 'path', label: 'Path', sortable: true },
+                { key: 'actions', label: 'Actions' }
             ]
         }
     },

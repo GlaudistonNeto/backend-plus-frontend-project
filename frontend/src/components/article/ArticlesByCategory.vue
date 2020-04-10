@@ -9,8 +9,8 @@
         </ul>
         <div class="load-more">
             <button v-if="loadMore"
-                class="btn btn-lg btn-outline-primary"
-                @click="getArticles">Carregar Mais Artigos</button>
+                class="btn btn-lg btn-outline-success"
+                @click="getArticles">Load More Articles</button>
         </div>
     </div>
 </template>

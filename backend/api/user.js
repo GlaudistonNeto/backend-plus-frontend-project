@@ -16,17 +16,17 @@ module.exports = app => {
         if(!req.user || !req.user.admin) user.admin = false
 
         try {
-            existsOrError(user.name, 'Nome não informado')
-            existsOrError(user.email, 'E-mail não informado')
-            existsOrError(user.password, 'Senha não informada')
-            existsOrError(user.confirmPassword, 'Confirmação de Senha inválida')
+            existsOrError(user.name, 'Name not set')
+            existsOrError(user.email, 'Email not set')
+            existsOrError(user.password, 'Password not set')
+            existsOrError(user.confirmPassword, 'Invalid Password Confirmation')
             equalsOrError(user.password, user.confirmPassword,
-                'Senhas não conferem')
+                'Passwords do not match')
 
             const userFromDB = await app.db('users')
                 .where({ email: user.email }).first()
             if(!user.id) {
-                notExistsOrError(userFromDB, 'Usuário já cadastrado')
+                notExistsOrError(userFromDB, 'User already registered')
             }
         } catch(msg) {
             return res.status(400).send(msg)
@@ -72,12 +72,12 @@ module.exports = app => {
         try {
             const articles = await app.db('articles')
                 .where({ userId: req.params.id })
-            notExistsOrError(articles, 'Usuário possui artigos.')
+            notExistsOrError(articles, 'User has articles.')
 
             const rowsUpdated = await app.db('users')
                 .update({deletedAt: new Date()})
                 .where({ id: req.params.id })
-            existsOrError(rowsUpdated, 'Usuário não foi encontrado.')
+            existsOrError(rowsUpdated, 'User was not found.')
 
             res.status(204).send()
         } catch(msg) {

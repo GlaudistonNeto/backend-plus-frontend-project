@@ -2,7 +2,7 @@
     <aside class="menu" v-show="isMenuVisible">
         <div class="menu-filter">
             <i class="fa fa-search fa-lg"></i>
-            <input type="text" placeholder="Type to filter..."
+            <input type="text" placeholder="Type for filtering..."
                 v-model="treeFilter" class="filter-field">
         </div>
         <Tree :data="treeData" :options="treeOptions"

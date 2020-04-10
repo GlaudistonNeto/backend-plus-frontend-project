@@ -11,7 +11,7 @@ module.exports = app => {
         if(req.params.id) category.id = req.params.id
 
         try {
-            existsOrError(category.name, 'Nome não informado')
+            existsOrError(category.name, 'Name not set')
         } catch(msg) {
             return res.status(400).send(msg)
         }
@@ -32,19 +32,19 @@ module.exports = app => {
 
     const remove = async (req, res) => {
         try {
-            existsOrError(req.params.id, 'Código da Categoria não informado.')
+            existsOrError(req.params.id, 'Category code not set.')
 
             const subcategory = await app.db('categories')
                 .where({ parentId: req.params.id })
-            notExistsOrError(subcategory, 'Categoria possui subcategorias.')
+            notExistsOrError(subcategory, 'Category has subcategory.')
 
             const articles = await app.db('articles')
                 .where({ categoryId: req.params.id })
-            notExistsOrError(articles, 'Categoria possui artigos.')
+            notExistsOrError(articles, 'Category has article.')
 
             const rowsDeleted = await app.db('categories')
                 .where({ id: req.params.id }).del()
-            existsOrError(rowsDeleted, 'Categoria não foi encontrada.')
+            existsOrError(rowsDeleted, 'Category not found.')
 
             res.status(204).send()
         } catch(msg) {

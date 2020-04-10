@@ -1,6 +1,6 @@
 <template>
     <footer class="footer">
-        <span>Copyright <strong>G-Neto</strong> © 2019-2020</span>
+        <span>Copyright <strong>G-Neto</strong> © 2019-2021</span>
     </footer>
 </template>
 

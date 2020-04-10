@@ -8,11 +8,11 @@ module.exports = app => {
         if(req.params.id) article.id = req.params.id
 
         try {
-            existsOrError(article.name, 'Nome não informado')
-            existsOrError(article.description, 'Descrição não informada')
-            existsOrError(article.categoryId, 'Categoria não informada')
-            existsOrError(article.userId, 'Autor não informado')
-            existsOrError(article.content, 'Conteúdo não informado')
+            existsOrError(article.name, 'Name not set')
+            existsOrError(article.description, 'Description not set')
+            existsOrError(article.categoryId, 'Category not set')
+            existsOrError(article.userId, 'Author not set')
+            existsOrError(article.content, 'Content not set')
         } catch(msg) {
             res.status(400).send(msg)
         }
@@ -37,7 +37,7 @@ module.exports = app => {
                 .where({ id: req.params.id }).del()
             
             try {
-                existsOrError(rowsDeleted, 'Artigo não foi encontrado.')
+                existsOrError(rowsDeleted, 'Article not found.')
             } catch(msg) {
                 return res.status(400).send(msg)    
             }

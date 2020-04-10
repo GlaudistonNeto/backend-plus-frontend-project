@@ -1,6 +1,6 @@
 <template>
 	<div id="app" :class="{'hide-menu': !isMenuVisible || !user}">
-		<Header title="G-Neto - Knowlege Base" 
+		<Header title="G-Neto - Knowledge base" 
 			:hideToggle="!user"
 			:hideUserDropdown="!user" />
 		<Menu v-if="user" />
@@ -11,14 +11,14 @@
 </template>
 
 <script>
-import axios from "axios";
-import { baseApiUrl, userKey } from "@/global";
-import { mapState } from "vuex";
-import Header from "@/components/template/Header";
-import Menu from "@/components/template/Menu";
-import Content from "@/components/template/Content";
-import Footer from "@/components/template/Footer";
-import Loading from "@/components/template/Loading";
+import axios from "axios"
+import { baseApiUrl, userKey } from "@/global"
+import { mapState } from "vuex"
+import Header from "@/components/template/Header"
+import Menu from "@/components/template/Menu"
+import Content from "@/components/template/Content"
+import Footer from "@/components/template/Footer"
+import Loading from "@/components/template/Loading"
 
 export default {
 	name: "App",
@@ -37,7 +37,7 @@ export default {
 			const userData = JSON.parse(json)
 			this.$store.commit('setUser', null)
 
-			if (!userData) {
+			if(!userData) {
 				this.validatingToken = false
 				this.$router.push({ name: 'auth' })
 				return
