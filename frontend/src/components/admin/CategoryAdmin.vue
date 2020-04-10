@@ -8,7 +8,7 @@
                     :readonly="mode === 'remove'"
                     placeholder="Enter the Category Name..." />
             </b-form-group>
-            <b-form-group label="Categoria Pai:" label-for="category-parentId">
+            <b-form-group label="Parent Category:" label-for="category-parentId">
                 <b-form-select v-if="mode === 'save'"
                     id="category-parentId"
                     :options="categories" v-model="category.parentId" />
